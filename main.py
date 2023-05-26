@@ -5,7 +5,7 @@ commands = int(input())
 for _ in range(commands):
     command = input()
     if len(command) == 1:
-        if command == '2':
+        if command == '2' and numbers:
             numbers.pop()
 
         elif command == '3':
@@ -18,6 +18,7 @@ for _ in range(commands):
         numbers.append(int(number))
 
 rev = reversed(numbers)
-print(x for x in rev)
+for_print = ', '.join(str(x) for x in rev)
+print(for_print)
 
 
