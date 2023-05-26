@@ -1,7 +1,23 @@
-from collections import deque
+numbers = list()
 
-numbers = deque(input().split())
-reversed_numbers = numbers.reverse()
+commands = int(input())
 
-for n in range(len(numbers)):
-    print(numbers.popleft(), end=' ')
+for _ in range(commands):
+    command = input()
+    if len(command) == 1:
+        if command == '2':
+            numbers.pop()
+
+        elif command == '3':
+            print(max(numbers))
+
+        else:
+            print(min(numbers))
+    else:
+        _, number = command.split()
+        numbers.append(int(number))
+
+rev = reversed(numbers)
+print(x for x in rev)
+
+
