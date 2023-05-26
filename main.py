@@ -4,8 +4,8 @@ commands = int(input())
 
 for _ in range(commands):
     command = input()
-    if len(command) == 1:
-        if command == '2' and numbers:
+    if len(command) == 1 and numbers:
+        if command == '2':
             numbers.pop()
 
         elif command == '3':
@@ -13,7 +13,7 @@ for _ in range(commands):
 
         else:
             print(min(numbers))
-    else:
+    elif len(command) >= 3:
         _, number = command.split()
         numbers.append(int(number))
 
