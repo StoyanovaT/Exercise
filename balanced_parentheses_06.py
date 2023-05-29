@@ -4,7 +4,7 @@ opening = []
 balanced = True
 
 for i in expression:
-    if i in ['{', '[', '(']:
+    if i in '{[(':
         opening.append(i)
     else:
         if opening:
