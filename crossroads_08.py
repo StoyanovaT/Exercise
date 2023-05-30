@@ -6,16 +6,18 @@ cars_passed = 0
 cars_waiting = deque()
 
 command = input()
-green_left = 0
 
 while command != 'END':
     if command != 'green':
         cars_waiting.append(command)
 
     else:
-        car_passing = cars_waiting.popleft()
-        if green_duration >= len(car_passing):
+        green_left = green_duration
+        for car in cars_waiting:
+            car_passing = cars_waiting.popleft()
+        if green_left >= len(car_passing):
             cars_passed += 1
+            green_left -= len(car_passing)
         else:
             if
 
